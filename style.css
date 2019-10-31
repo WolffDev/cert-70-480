@@ -1,0 +1,12 @@
+a[href]:hover::after {
+  content: " (" attr(href) ")";
+  background: yellow;
+}
+
+div p:first-of-type {
+  background: blue;
+}
+
+div p.highlight {
+  background: yellow;
+}
