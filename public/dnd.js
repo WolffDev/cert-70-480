@@ -12,6 +12,9 @@ let draggedItem;
 
 function dragging(e) {
   const elm = e.target;
+  const dataObj = e.dataTransfer;
+  const data = dataObj.getData('text');
+  console.log('val', data);
   elm.classList.add('dragging');
   draggedItem = elm;
   console.log(draggedItem);
@@ -27,7 +30,7 @@ function prevDef(e) {
 }
 
 function dropItem(e) {
-  console.log(e);
+  console.log('Drop Event: ', e);
   const dropContainer = e.target;
   if (dropContainer.classList.contains('hole') && dropContainer.children.length === 0) {
     draggedItem.remove();
